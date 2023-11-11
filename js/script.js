@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var loadingText = document.getElementById('loading-text');
     var launchButton = document.getElementById('launch-button');
-    var percent = 0;
+    var percent = 50;
 
     var loadingInterval = setInterval(function() {
         percent += 1;
