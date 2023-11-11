@@ -33,7 +33,6 @@ body, html {
     letter-spacing: 8px;
     background-color: black; /* Black background */
     border: 1px solid white; /* White border */
-    border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
     display: inline-block; /* Use inline-block for better control */
