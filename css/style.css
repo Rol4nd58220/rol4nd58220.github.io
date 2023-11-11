@@ -39,6 +39,7 @@ body, html {
     box-shadow: 0 0 10px white; /* Glowing effect */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
     animation: fadeIn 0.5s ease;
+    z-index: 9999;
 }
 
 #launch-button:hover, #launch-button:focus {
@@ -68,7 +69,7 @@ body, html {
         );
     background-size: 100% 4px, 3px 100%;
     mix-blend-mode: screen; /* Blends the overlay with the content */
-    z-index: 0; /* Ensures overlay is above other content */
+    z-index: 1000; /* Ensures overlay is above other content */
 }
 
 @keyframes fadeIn {
