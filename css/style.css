@@ -68,7 +68,7 @@ body, html {
         );
     background-size: 100% 4px, 3px 100%;
     mix-blend-mode: screen; /* Blends the overlay with the content */
-    z-index: 1000; /* Ensures overlay is above other content */
+    z-index: 0; /* Ensures overlay is above other content */
 }
 
 @keyframes fadeIn {
