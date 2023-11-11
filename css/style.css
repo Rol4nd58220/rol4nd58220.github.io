@@ -26,8 +26,8 @@ body, html {
 }
 
 #launch-button {
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 15px 30px; /* Increased padding for larger size */
+    font-size: 1.2em; /* Slightly larger font size */
     color: #fff;
     background-color: black; /* Black background */
     border: 2px solid white; /* White border */
@@ -38,9 +38,15 @@ body, html {
     outline: none; /* Remove default focus outline */
     box-shadow: 0 0 10px white; /* Glowing effect */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
+    animation: fadeIn 0.5s ease;
 }
 
 #launch-button:hover, #launch-button:focus {
     background-color: #333; /* Slightly lighter black on hover/focus */
     box-shadow: 0 0 15px white, 0 0 30px white; /* Increased glowing effect on hover/focus */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
