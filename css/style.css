@@ -22,6 +22,7 @@ body, html {
 #loading-text {
     font-size: 2em;
     color: white; /* White text and button */
+    transition: all 0.5s ease; /* Smooth transition for text changes */
 }
 
 #launch-button {
