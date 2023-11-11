@@ -10,6 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingText.textContent = percent + '% Loading...';
     };
 
+    function addGlitch() {
+        const body = document.querySelector('body');
+        body.classList.add('glitch');
+        setTimeout(() => {
+          body.classList.remove('glitch');
+        }, 200); // Duration of the glitch effect
+      }
+      
+      setInterval(addGlitch, 5000); // Frequency of the glitches
+
     var loadingInterval = setInterval(function() {
         if (currentPercent < loadingSteps[currentStep]) {
             currentPercent++;
