@@ -1,18 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
     var loadingText = document.getElementById('loading-text');
     var launchButton = document.getElementById('launch-button');
-    var percent = 50;
+    var loadingSteps = [50, 75, 93, 100]; // Loading steps
+    var currentStep = 0;
 
     var loadingInterval = setInterval(function() {
-        percent += 1;
-        loadingText.textContent = percent + '%';
-
-        if (percent >= 100) {
+        if (currentStep < loadingSteps.length) {
+            loadingText.textContent = loadingSteps[currentStep] + '%';
+            currentStep++;
+        } else {
             clearInterval(loadingInterval);
             loadingText.style.display = 'none';
             launchButton.style.display = 'block';
         }
-    }, 50); // Adjust time for simulation of loading
+    }, 1000); // Adjust time for each step
 
     launchButton.addEventListener('click', function() {
         document.getElementById('loading-screen').style.display = 'none';
