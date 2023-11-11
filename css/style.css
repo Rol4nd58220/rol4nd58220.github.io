@@ -12,11 +12,16 @@ body, html {
     justify-content: center;
     align-items: center;
     z-index: 9999;
+
+    /* Creating grid lines */
+    background-image: linear-gradient(white 1px, transparent 1px),
+                      linear-gradient(90deg, white 1px, transparent 1px);
+    background-size: 50px 50px; /* Size of the grid */
 }
 
 #loading-text {
     font-size: 2em;
-    color: #000;
+    color: white; /* White text and button */
 }
 
 #launch-button {
