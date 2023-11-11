@@ -27,11 +27,12 @@ body, html {
 }
 
 #launch-button {
-    padding: 15px 60px; /* Increased padding for larger size */
-    font-size: 1.5em; /* Slightly larger font size */
+    padding: 10px 40px; /* Increased padding for larger size */
+    font-size: 16px; /* Slightly larger font size */
     color: #fff;
+    letter-spacing: 8px;
     background-color: black; /* Black background */
-    border: 2px solid white; /* White border */
+    border: 1px solid white; /* White border */
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
@@ -39,7 +40,7 @@ body, html {
     outline: none; /* Remove default focus outline */
     box-shadow: 0 0 10px white; /* Glowing effect */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
-    animation: fadeIn 0.5s ease;
+    animation: 0.4s ease-out 0s 1 normal both running fadeInUp;
     z-index: 10000;
 }
 
@@ -73,7 +74,13 @@ body, html {
     z-index: 1000; /* Ensures overlay is above other content */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
