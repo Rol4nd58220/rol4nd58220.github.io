@@ -46,21 +46,30 @@ body, html {
     box-shadow: 0 0 15px white, 0 0 30px white; /* Increased glowing effect on hover/focus */
 }
 
-.vhs-effect {
-    /* Basic color and blur distortion */
-    filter: contrast(150%) saturate(150%) blur(0.5px);
-  
-    /* Scan lines effect */
-    background-image: repeating-linear-gradient(
-      transparent,
-      transparent 1px,
-      rgba(255, 255, 255, 0.1) 1px,
-      rgba(255, 255, 255, 0.1) 3px
-    );
-    background-size: 100% 3px;
-  
-    /* Optional: Add more effects as needed */
-  }
+.vhs-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through */
+    background-image: 
+        repeating-linear-gradient(
+            transparent,
+            transparent 1px,
+            rgba(255, 255, 255, 0.05) 1px,
+            rgba(255, 255, 255, 0.05) 2px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.03),
+            rgba(0, 255, 0, 0.03) 33%,
+            rgba(0, 0, 255, 0.03) 66%
+        );
+    background-size: 100% 4px, 3px 100%;
+    mix-blend-mode: screen; /* Blends the overlay with the content */
+    z-index: 1000; /* Ensures overlay is above other content */
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.95); }
