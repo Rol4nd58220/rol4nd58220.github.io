@@ -36,12 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 50); // Adjust for a smoother progression
 
     launchButton.addEventListener('click', function() {
-        console.log("Button clicked");
-        document.getElementById('loading-screen').style.display = 'none';
-        // Initialize your 3D scene or other scripts here
-    });
-
-    launchButton.addEventListener('click', function() {
         document.getElementById('loading-screen').style.display = 'none';
         // Initialize your 3D scene or other scripts here
     });
