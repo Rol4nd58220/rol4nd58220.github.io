@@ -3,28 +3,24 @@ document.addEventListener('DOMContentLoaded', function() {
     var loadingText = document.getElementById('loading-text');
     var launchButton = document.getElementById('launch-button');
     var loadingSteps = [50, 75, 93, 100];
-    var currentStep = 0;
-    var currentPercent = 0;
+    var currentStepIndex = 0;
 
     var updateLoadingText = function(percent) {
         loadingText.textContent = percent + '% Loading...';
     };
 
     var progressLoading = function() {
-        currentPercent++;
+        var currentPercent = loadingSteps[currentStepIndex];
+
         updateLoadingText(currentPercent);
 
-        if (currentPercent === loadingSteps[currentStep]) {
-            if (currentStep < loadingSteps.length - 1) {
-                currentStep++;
-                setTimeout(progressLoading, 1000); // Pause for 1 second at key percentages
-            } else {
-                clearInterval(loadingInterval);
-                loadingText.style.display = 'none';
-                launchButton.style.display = 'block';
-            }
+        if (currentStepIndex < loadingSteps.length - 1) {
+            currentStepIndex++;
+            // Delay between steps
+            setTimeout(progressLoading, 1000); // 1 second between each step
         } else {
-            setTimeout(progressLoading, 50); // Continue loading
+            loadingText.style.display = 'none';
+            launchButton.style.display = 'block';
         }
     };
 
