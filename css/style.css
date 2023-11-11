@@ -28,14 +28,18 @@ body, html {
     padding: 10px 20px;
     font-size: 1em;
     color: #fff;
-    background-color: #007bff;
-    border: none;
+    background-color: black; /* Black background */
+    border: 2px solid white; /* White border */
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
-    display: none; /* Hidden initially */
+    display: inline-block; /* Use inline-block for better control */
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 10px white; /* Glowing effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
 
-#launch-button:hover {
-    background-color: #0056b3;
+#launch-button:hover, #launch-button:focus {
+    background-color: #333; /* Slightly lighter black on hover/focus */
+    box-shadow: 0 0 15px white, 0 0 30px white; /* Increased glowing effect on hover/focus */
 }
