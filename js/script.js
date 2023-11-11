@@ -10,31 +10,27 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingText.textContent = percent + '% Loading...';
     };
 
-    function addGlitch() {
-        const body = document.querySelector('body');
-        body.classList.add('glitch');
-        setTimeout(() => {
-          body.classList.remove('glitch');
-        }, 200); // Duration of the glitch effect
-      }
-      
-      setInterval(addGlitch, 5000); // Frequency of the glitches
+    var progressLoading = function() {
+        currentPercent++;
+        updateLoadingText(currentPercent);
 
-    var loadingInterval = setInterval(function() {
-        if (currentPercent < loadingSteps[currentStep]) {
-            currentPercent++;
-            updateLoadingText(currentPercent);
-        } else {
+        if (currentPercent === loadingSteps[currentStep]) {
             if (currentStep < loadingSteps.length - 1) {
                 currentStep++;
+                setTimeout(progressLoading, 1000); // Pause for 1 second at key percentages
             } else {
                 clearInterval(loadingInterval);
                 loadingText.style.display = 'none';
                 launchButton.style.display = 'block';
             }
+        } else {
+            setTimeout(progressLoading, 50); // Continue loading
         }
-    }, 50); // Adjust for a smoother progression
+    };
 
+    // Start the loading process
+    progressLoading();
+    
     launchButton.addEventListener('click', function() {
         document.getElementById('loading-screen').style.display = 'none';
         // Initialize your 3D scene or other scripts here
