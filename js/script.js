@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var loadingText = document.getElementById('loading-text');
+    var launchButton = document.getElementById('launch-button');
     var percent = 0;
 
     var loadingInterval = setInterval(function() {
@@ -8,11 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (percent >= 100) {
             clearInterval(loadingInterval);
-            loadingText.textContent = 'Launch';
-            setTimeout(function() {
-                document.getElementById('loading-screen').style.display = 'none';
-                // Initialize your 3D scene or other scripts here
-            }, 1000); // 1 second delay for 'Launch' message
+            loadingText.style.display = 'none';
+            launchButton.style.display = 'block';
         }
     }, 50); // Adjust time for simulation of loading
+
+    launchButton.addEventListener('click', function() {
+        document.getElementById('loading-screen').style.display = 'none';
+        // Initialize your 3D scene or other scripts here
+    });
 });

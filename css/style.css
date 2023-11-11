@@ -18,3 +18,19 @@ body, html {
     font-size: 2em;
     color: #000;
 }
+
+#launch-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: none; /* Hidden initially */
+}
+
+#launch-button:hover {
+    background-color: #0056b3;
+}
