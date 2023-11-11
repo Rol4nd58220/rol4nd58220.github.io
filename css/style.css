@@ -14,8 +14,8 @@ body, html {
     z-index: 9999;
 
     /* Creating grid lines */
-    background-image: linear-gradient(white 1px, transparent 1px),
-                      linear-gradient(90deg, white 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
     background-size: 50px 50px; /* Size of the grid */
 }
 
