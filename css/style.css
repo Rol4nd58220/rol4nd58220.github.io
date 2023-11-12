@@ -57,11 +57,10 @@ body, html {
 
 .loading-gif {
     position: absolute;
-    bottom: 50%; /* Position the GIF above the button */
+    bottom: 100%; /* Place the bottom of the GIF at the top of the button */
     left: 50%; /* Center the GIF horizontally */
-    right: 50%;
-    transform: translateX(-50%); /* Adjust horizontal position */
-    width: 100px; /* Adjust the size of the GIF */
+    transform: translate(-50%, -10px); /* Adjust position and add a small gap above the button */
+    width: 100px; /* Width of the GIF */
     height: auto; /* Maintain aspect ratio */
     z-index: 9999; /* Ensures the GIF is above the button */
     animation: 0.8s ease-out 0s 1 normal both running fadeInUp;
