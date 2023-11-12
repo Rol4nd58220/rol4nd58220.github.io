@@ -26,6 +26,11 @@ body, html {
     z-index: 9999;
 }
 
+.button-container {
+    position: relative;
+    display: inline-block; /* Adjust as needed */
+}
+
 #launch-button {
     padding: 10px 40px; /* Increased padding for larger size */
     font-size: 16px; /* Slightly larger font size */
@@ -40,6 +45,7 @@ body, html {
     box-shadow: 0 0 10px white; /* Glowing effect */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
     animation: 0.8s ease-out 0s 1 normal both running fadeInUp;
+    position: relative;
     z-index: 10000;
 }
 
@@ -47,6 +53,16 @@ body, html {
     background-color: #333; /* Slightly lighter black on hover/focus */
     box-shadow: 0 0 15px white, 0 0 30px white; /* Increased glowing effect on hover/focus */
     z-index: 10000;
+}
+
+.loading-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust the size to match your button */
+    height: 100%;
+    pointer-events: none; /* Makes the gif click-through */
+    z-index: 2; /* Ensures the GIF is above the button */
 }
 
 .vhs-overlay {
