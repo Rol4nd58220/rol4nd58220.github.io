@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentStepIndex < loadingSteps.length - 1) {
             currentStepIndex++;
             updateLoadingText(loadingSteps[currentStepIndex]);
-            setTimeout(progressLoading, 500); // 1 second between each step
+            setTimeout(progressLoading, 300); // 1 second between each step
         } else {
             // Handle the final step
             updateLoadingText(loadingSteps[currentStepIndex]);
@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadingText.style.display = 'none';
                 launchButton.style.display = 'block';
                 loadingGif.style.display = 'block'; // Show the GIF with the button
-            }, 1000); // Wait for a moment before showing the button
+            }, 500); // Wait for a moment before showing the button
         }
     };
 
     // Progress to the next step after an initial delay
-    setTimeout(progressLoading, 1000);
+    setTimeout(progressLoading, 500);
 
     launchButton.addEventListener('click', function() {
         document.getElementById('loading-screen').style.display = 'none';
