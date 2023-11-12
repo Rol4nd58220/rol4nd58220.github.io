@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentStepIndex < loadingSteps.length - 1) {
             currentStepIndex++;
             updateLoadingText(loadingSteps[currentStepIndex]);
-            setTimeout(progressLoading, 1000); // 1 second between each step
+            setTimeout(progressLoading, 500); // 1 second between each step
         } else {
             // Handle the final step
             updateLoadingText(loadingSteps[currentStepIndex]);
