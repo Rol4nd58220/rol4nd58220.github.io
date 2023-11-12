@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var loadingText = document.getElementById('loading-text');
     var launchButton = document.getElementById('launch-button');
+    var loadingGif = document.querySelector('.loading-gif'); // Reference to the GIF
     var loadingSteps = [50, 75, 93, 100];
     var currentStepIndex = 0;
 
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 loadingText.style.display = 'none';
                 launchButton.style.display = 'block';
+                loadingGif.style.display = 'block'; // Show the GIF with the button
             }, 1000); // Wait for a moment before showing the button
         }
     };
