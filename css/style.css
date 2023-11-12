@@ -59,7 +59,8 @@ body, html {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Adjust the size to match your button */
+    bottom: 50%;
+    width: 0; /* Adjust the size to match your button */
     height: 100%;
     z-index: 9999; /* Ensures the GIF is above the button */
 }
