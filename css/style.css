@@ -60,7 +60,7 @@ body, html {
     bottom: 100%; /* Position the GIF above the button */
     left: 50%; /* Center the GIF horizontally */
     transform: translateX(-50%); /* Adjust horizontal position */
-    width: 50px; /* Adjust the size of the GIF */
+    width: 100px; /* Adjust the size of the GIF */
     height: auto; /* Maintain aspect ratio */
     z-index: 9999; /* Ensures the GIF is above the button */
 }
