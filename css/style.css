@@ -57,7 +57,7 @@ body, html {
 
 .loading-gif {
     position: absolute;
-    bottom: 100%; /* Position the GIF above the button */
+    bottom: 50%; /* Position the GIF above the button */
     left: 50%; /* Center the GIF horizontally */
     transform: translateX(-50%); /* Adjust horizontal position */
     width: 100px; /* Adjust the size of the GIF */
