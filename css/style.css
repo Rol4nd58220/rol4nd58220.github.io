@@ -3,6 +3,80 @@ body, html {
     margin: 0;
 }
 
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 400px;
+    width: 100%;
+    z-index: 100; /* Ensure navbar stays on top */
+    padding: 0.5rem 1rem; /* Adjust the padding as needed */
+    font-size: 24px; /* Matching the icon size */
+    display: flex;
+    justify-content: center; /* Center the menu items horizontally */
+    align-items: center; /* Align items vertically */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    padding: 0.5rem; /* Adjust the padding as needed */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff; /* White color, matching the icon color */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    padding: 5px 10px; /* Padding to create a boxy look */
+    border-radius: 10px; /* Rounded corners to match the icons */
+}
+
+.navbar a:hover {
+    color: red; /* Color changes to red on hover, matching the icon hover effect */
+    background-color: #fff; /* White background on hover */
+    box-shadow: 0 0 10px red; /* Glowing effect to match the icons */
+}
+
+.social-icons {
+    position: fixed; /* Fixed position */
+    top: 20px; /* 10px from the top */
+    right: 100px; /* 10px from the right */
+    z-index: 100; /* High z-index to ensure it's above other content */
+
+    /* Styling the icons */
+    display: flex;
+    align-items: center;
+}
+
+
+.social-icons a {
+    display: inline-flex; /* Use flexbox for better centering */
+    align-items: center;
+    justify-content: center;
+    margin: 10px; /* Spacing between icons */
+    color: #fff; /* Default icon color */
+    font-size: 27px; /* Approximate height of the icon */
+    padding: 5px 8px; /* Padding to create the width and vertical space */
+    border: 1px solid #fff; /* Border for the box */
+    border-radius: 10px; /* Rounded corners for the box */
+    background-color: transparent; /* Transparent background */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    height: 27px; /* Fixed height */
+    width: 24px; /* Fixed width */
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: red; /* Icon color changes to red on hover */
+    background-color: #fff; /* Background color for emphasis */
+    box-shadow: 0 0 10px red; /* Glowing effect */
+}
+
 #loading-screen {
     position: fixed;
     width: 100%;
@@ -110,12 +184,13 @@ body, html {
     width: 100%; /* Full width of the parent */
     height: 100vh; /* Full height of the viewport */
     overflow: hidden; /* Hide any overflow */
+    background-color: black;
 }
 
 #home-video {
     position: absolute; /* Absolute position relative to #home-section */
     top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
+    left: 40%; /* Center horizontally */
     min-width: 100%; /* Minimum width to 100% of container */
     min-height: 100%; /* Minimum height to 100% of container */
     width: auto; /* Maintain aspect ratio */
@@ -125,6 +200,150 @@ body, html {
 
     /* Adding a brightness filter */
     filter: brightness(2) contrast(1.2);
+}
+
+.avatar-container {
+    position: absolute; /* Position it as needed */
+    top: 12rem; /* Adjust as needed */
+    left: 12.5rem; /* Adjust as needed */
+    width: 60.25rem; /* Width of the visible area */
+    height: 90rem; /* Height of the visible area, smaller than the avatar to 'cut' the bottom */
+    overflow: hidden; /* Hides parts of the avatar that overflow this container */
+    border-radius: 50%; /* Optional: to keep the circular shape */
+    z-index: 2; /* Ensure it's above other content */
+}
+
+.avatar {
+    width: 100%; /* Fill the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area without stretching */
+    /* No need for position absolute here */
+}
+
+.content-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    left: 73%;
+    top: 40%;
+    transform: translateY(-50%);
+    /* Add width if necessary */
+    width: auto; /* Adjust as needed */
+}
+
+.content-overlay p {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: -100px;
+    margin-inline-end: 0px;
+}
+
+.text-magic {
+    transform: scale(2);
+    font-size: 36px;
+    width: auto;
+    font-family: Raleway, Verdana, Arial;
+    color: #fff;
+    text-align: left;
+}
+
+.white {
+    position: absolute;
+    left: -10px;
+    width: 100%;
+    height: 3px;
+    background: #000;
+    z-index: 4;
+    animation: whiteMove 2s ease-out infinite;
+}
+
+.text-magic::before {
+    content: attr(data-word);
+    position: absolute;
+    top: 0;
+    left: -0.5px;
+    height: 0px;
+    color: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    z-index: 2;
+    animation: redShadow 1s ease-in infinite;
+    filter: contrast(200%);
+    text-shadow: 1px 0 0 red;
+}
+
+.text-magic::after {
+    content: attr(data-word);
+    position: absolute;
+    top: 0;
+    left: -3px;
+    height: 36px;
+    color: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.9);
+    animation: redHeight 1.5s ease-out infinite;
+    filter: contrast(200%);
+    text-shadow: -1px 0 0 cyan;
+    mix-blend-mode: darken;
+}
+
+@keyframes redShadow {
+    20% {
+        height: 32px;
+    }
+    60% {
+        height: 6px;
+    }
+    100% {
+        height: 42px;
+    }
+}
+
+@keyframes redHeight {
+    20% {
+        height: 42px;
+    }
+    35% {
+        height: 12px;
+    }
+    50% {
+        height: 40px;
+    }
+    60% {
+        height: 20px;
+    }
+    70% {
+        height: 34px;
+    }
+    80% {
+        height: 22px;
+    }
+    100% {
+        height: 0px;
+    }
+}
+
+@keyframes whiteMove {
+    8% {
+        top: 38px;
+    }
+    14% {
+        top: 8px;
+    }
+    20% {
+        top: 42px;
+    }
+    32% {
+        top: 2px;
+    }
+    99% {
+        top: 30px;
+    }
 }
 
 @keyframes fadeInUp {
