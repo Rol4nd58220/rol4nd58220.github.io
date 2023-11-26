@@ -37,9 +37,9 @@ body, html {
 }
 
 .navbar a:hover {
-    color: red; /* Color changes to red on hover, matching the icon hover effect */
+    color: orange; /* Change text stroke to orange */
     background-color: #fff; /* White background on hover */
-    box-shadow: 0 0 10px red; /* Glowing effect to match the icons */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.704); /* Semi-transparent yellow color */
 }
 
 .social-icons {
@@ -52,7 +52,6 @@ body, html {
     display: flex;
     align-items: center;
 }
-
 
 .social-icons a {
     display: inline-flex; /* Use flexbox for better centering */
@@ -162,55 +161,155 @@ body, html {
     background-size: 100% 4px, 3px 100%;
     mix-blend-mode: screen; /* Blends the overlay with the content */
     z-index: 1000; /* Ensures overlay is above other content */
+    /* Creating grid lines */
+    
 }
 
 .content-overlay {
     position: absolute; /* Position relative to #home-section */
-    top: 0; /* Align to the top of #home-section */
-    left: 0; /* Align to the left of #home-section */
+    top: -10%; /* Align to the top of #home-section */
+    left: 60%; /* Align to the left of #home-section */
     width: 100%; /* Same width as #home-section */
     height: 100%; /* Same height as #home-section */
     display: flex; /* Use Flexbox for easy centering */
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    align-items: flex-start; /* Align items to start (left) instead of center */
     color: white; /* Set text color for visibility */
     text-align: center; /* Center text alignment */
     z-index: 2; /* Ensure it's above the video */
 }
 
+h2 {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.masked-text-wrapper h2 {
+    font-size: 7.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: white; /* Change text color to white */
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.masked-text-wrapper {
+    --_box-width: 100%;
+    text-align: center;
+    position: relative;
+  }
+  
+  .text-default {
+    position: relative;
+  }
+  
+  .text-default:before,
+  .text-default:after {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: orange; /* Change line color to orange */
+    position: absolute;
+    top: 0;
+    transform: skew(-41.5deg);
+  }
+  
+  .text-default:before {
+    animation: moveLinesBefore 8s infinite;
+  }
+  
+  .text-default:after {
+    animation: moveLinesAfter 8s infinite;
+  }
+  
+  .text-underneath {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--_box-width);
+    color: #e5e5e5;
+    color: #e5e5e5;
+    -webkit-text-stroke: 3px orange; /* Change text stroke to orange */
+    animation: rectangle 8s infinite;
+  }
+
+  /* Typewriter effect styles */
+  .typewriter h2 {
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    display: inline-block;
+    font-size: 2em;
+  }
+
+  .typewriter h2:after {
+    content: "|";
+    animation: blink-caret .75s step-end infinite;
+  }
+
 #home-section {
-    position: relative; /* Establish a containing block for absolute positioning */
-    width: 100%; /* Full width of the parent */
-    height: 100vh; /* Full height of the viewport */
-    overflow: hidden; /* Hide any overflow */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
     background-color: black;
 }
 
+.video-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    z-index: 1;
+}
+
 #home-video {
-    position: absolute; /* Absolute position relative to #home-section */
-    top: 50%; /* Center vertically */
-    left: 40%; /* Center horizontally */
-    min-width: 100%; /* Minimum width to 100% of container */
-    min-height: 100%; /* Minimum height to 100% of container */
-    width: auto; /* Maintain aspect ratio */
-    height: auto; /* Maintain aspect ratio */
-    transform: translate(-50%, -50%); /* Adjust for centering */
-    z-index: 1; /* Keep it behind other content within #home-section */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adjust as needed */
+    animation: rotateVideo 10s linear infinite;
+    transform-origin: center;
 
     /* Adding a brightness filter */
-    filter: brightness(2) contrast(1.2);
+    filter: brightness(0.9) contrast(1.2);
+}
+
+#home-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows interaction with the video */
+
+    /* Creating grid lines */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 50px 50px; /* Size of the grid */
+    z-index: 2; /* Ensure it is above the video */
 }
 
 .avatar-container {
     position: absolute; /* Position it as needed */
     top: 12rem; /* Adjust as needed */
-    left: 12.5rem; /* Adjust as needed */
+    left: 12rem; /* Adjust as needed */
     width: 60.25rem; /* Width of the visible area */
     height: 90rem; /* Height of the visible area, smaller than the avatar to 'cut' the bottom */
     overflow: hidden; /* Hides parts of the avatar that overflow this container */
     border-radius: 50%; /* Optional: to keep the circular shape */
-    z-index: 2; /* Ensure it's above other content */
+    z-index: 3; /* Ensure it's above other content */
 }
 
 .avatar {
@@ -220,129 +319,191 @@ body, html {
     /* No need for position absolute here */
 }
 
-.content-overlay {
+.button-container2 {
+    /* Example positioning styles */
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    position: absolute;
-    left: 73%;
-    top: 40%;
-    transform: translateY(-50%);
-    /* Add width if necessary */
-    width: auto; /* Adjust as needed */
+    justify-content: center; /* Center button horizontally */
+    align-items: center; /* Center button vertically */
+    position: absolute; /* Absolute positioning */
+    top: 65%; /* Position from the top */
+    left: 65%; /* Position from the left */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    z-index: 10;
 }
 
-.content-overlay p {
+/* Button Base Styles */
+.btn {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    text-align: left;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: -100px;
-    margin-inline-end: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
+    height: 3rem;
+    background-size: 300% 300%;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+
+    background-image: linear-gradient(#212121, #212121),
+                      linear-gradient(137.48deg, #ff4500 10%, #ff6347 45%, #ff8c00 67%, #ffd700 87%);
+    
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 
-.text-magic {
-    transform: scale(2);
-    font-size: 36px;
-    width: auto;
-    font-family: Raleway, Verdana, Arial;
-    color: #fff;
-    text-align: left;
+
+
+/* Star Container */
+#container-stars {
+    position: absolute; /* Positions the star container absolutely within the button */
+    z-index: -1; /* Places the stars behind the button content */
+    width: 100%; /* Full width of the parent element */
+    height: 100%; /* Full height of the parent element */
+    overflow: hidden; /* Hides overflow content */
+    transition: 0.5s; /* Transition effect for hover */
+    backdrop-filter: blur(1rem); /* Blur effect */
+    border-radius: 5rem; /* Rounds the corners */
 }
 
-.white {
-    position: absolute;
-    left: -10px;
-    width: 100%;
-    height: 3px;
-    background: #000;
-    z-index: 4;
-    animation: whiteMove 2s ease-out infinite;
+/* Text Style */
+strong {
+    z-index: 2; /* Places the text above other elements */
+    font-family: 'Avalors Personal Use'; /* Custom font */
+    font-size: 12px; /* Text size */
+    letter-spacing: 5px; /* Space between letters */
+    color: #FFFFFF; /* Text color */
+    text-shadow: 0 0 4px white; /* Text shadow for a glowing effect */
 }
 
-.text-magic::before {
-    content: attr(data-word);
-    position: absolute;
-    top: 0;
-    left: -0.5px;
-    height: 0px;
-    color: rgba(255, 255, 255, 0.9);
-    overflow: hidden;
-    z-index: 2;
-    animation: redShadow 1s ease-in infinite;
-    filter: contrast(200%);
-    text-shadow: 1px 0 0 red;
+/* Glow Effect */
+#glow {
+    position: absolute; /* Absolute position */
+    display: flex; /* Flex container for glow circles */
+    width: 12rem; /* Width of the glow container */
 }
 
-.text-magic::after {
-    content: attr(data-word);
-    position: absolute;
-    top: 0;
-    left: -3px;
-    height: 36px;
-    color: rgba(255, 255, 255, 0.8);
-    overflow: hidden;
-    z-index: 3;
-    background: rgba(0, 0, 0, 0.9);
-    animation: redHeight 1.5s ease-out infinite;
-    filter: contrast(200%);
-    text-shadow: -1px 0 0 cyan;
-    mix-blend-mode: darken;
+/* Glow Circles */
+.circle {
+    width: 100%; /* Full width of parent */
+    height: 30px; /* Height of the circle */
+    filter: blur(2rem); /* Blurry effect */
+    animation: pulse_3011 4s infinite; /* Pulse animation */
+    z-index: -1; /* Behind the button content */
 }
 
-@keyframes redShadow {
-    20% {
-        height: 32px;
+/* First Circle Style */
+.circle:nth-of-type(1) {
+    background: rgba(255, 69, 0, 0.636); /* Semi-transparent orange-red color */
+}
+
+/* Second Circle Style */
+.circle:nth-of-type(2) {
+    background: rgba(255, 215, 0, 0.704); /* Semi-transparent yellow color */
+}
+
+/* Hover Effect on Container Stars */
+.btn:hover #container-stars {
+    z-index: 1; /* Brings the stars to the front */
+    background-color: #212121; /* Changes background color */
+}
+
+/* Hover Effect on Button */
+.btn:hover {
+    transform: scale(1.1); /* Scales up the button */
+}
+
+/* Active State Styles */
+.btn:active {
+    border: double 4px #ff4500; /* Changes border color to orange-red */
+    background-origin: border-box; /* Adjusts background origin */
+    background-clip: content-box, border-box; /* Adjusts background clipping */
+    animation: none; /* Stops the animation */
+}
+
+/* Active State for Circles */
+.btn:active .circle {
+    background: #ff4500; /* Changes circle color to orange-red */
+}
+
+/* Stars Styles */
+#stars {
+    position: relative; /* Relative position */
+    background: transparent; /* Transparent background */
+    width: 200rem; /* Large width */
+    height: 200rem; /* Large height */
+}
+
+/* After Pseudo-element for Stars */
+#stars::after {
+    content: ""; /* Empty content */
+    position: absolute; /* Absolute position */
+    top: -10rem; /* Position adjustments */
+    left: -100rem; /* Position adjustments */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    animation: animStarRotate 90s linear infinite; /* Rotating animation */
+    background-image: radial-gradient(#ffffff 1px, transparent 1%); /* Star-like small dots */
+    background-size: 50px 50px; /* Size of the star pattern */
+}
+
+/* Before Pseudo-element for Stars */
+#stars::before {
+    content: ""; /* Empty content */
+    position: absolute; /* Absolute position */
+    top: 0; /* Top position */
+    left: -50%; /* Left position */
+    width: 170%; /* Width larger than the container */
+    height: 500%; /* Height larger than the container */
+    animation: animStar 60s linear infinite; /* Vertical moving animation */
+    background-image: radial-gradient(#ffffff 1px, transparent 1%); /* Star-like small dots */
+    background-size: 50px 50px; /* Size of the star pattern */
+    opacity: 0.5; /* Semi-transparent */
+}
+
+/* Keyframes for Animations */
+@keyframes animStar {
+    from {
+        transform: translateY(0);
     }
-    60% {
-        height: 6px;
-    }
-    100% {
-        height: 42px;
+    to {
+        transform: translateY(-135rem);
     }
 }
 
-@keyframes redHeight {
-    20% {
-        height: 42px;
+@keyframes animStarRotate {
+    from {
+        transform: rotate(360deg);
     }
-    35% {
-        height: 12px;
+    to {
+        transform: rotate(0);
+    }
+}
+
+@keyframes gradient_301 {
+    0% {
+        background-position: 0% 50%;
     }
     50% {
-        height: 40px;
-    }
-    60% {
-        height: 20px;
-    }
-    70% {
-        height: 34px;
-    }
-    80% {
-        height: 22px;
+        background-position: 100% 50%;
     }
     100% {
-        height: 0px;
+        background-position: 0% 50%;
     }
 }
 
-@keyframes whiteMove {
-    8% {
-        top: 38px;
+@keyframes pulse_3011 {
+    0% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     }
-    14% {
-        top: 8px;
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
     }
-    20% {
-        top: 42px;
-    }
-    32% {
-        top: 2px;
-    }
-    99% {
-        top: 30px;
+    100% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
 }
 
@@ -354,5 +515,84 @@ body, html {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes rotateVideo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { color: transparent }
+    50% { color: #ccc }
+  }
+
+@keyframes moveLinesBefore {
+    0%, 100% { left: 50%; }
+    50% { left: 30%; }
+  }
+  
+  @keyframes moveLinesAfter {
+    0%, 100% { left: 70%; }
+    50% { left: 50%; }
+  }
+  
+  @keyframes rectangle {
+    0%, 100% { clip-path: polygon(60% 0, 80% 0, 60% 100%, 40% 100%); }
+    50% { clip-path: polygon(40% 0, 60% 0, 40% 100%, 20% 100%); }
+  }
+
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .navbar {
+        top: 10px;
+        left: 10px;
+        transform: none;
+        width: 95%;
+        font-size: min(18px, 5vw);
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        padding: 0.5rem 0;
+    }
+
+    .social-icons {
+        top: 60px;
+    }
+
+    .content-overlay {
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+    }
+
+    .content-overlay p {
+        text-align: center;
+    }
+
+    .button-container2 {
+        top: 75%;
+    }
+
+    .btn {
+        width: min(13rem, 80%);
     }
 }

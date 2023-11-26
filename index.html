@@ -12,7 +12,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -23,6 +23,21 @@
         <a href="https://www.facebook.com/RolandMorzo/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook fa-1x"></i></a>
         <a href="https://www.instagram.com/donno.flo1/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fa-1x"></i></a>
         <a href="https://github.com/Rol4nd58220" target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-1x"></i></a>
+    </div>
+    
+    <!-- Button Container -->
+    <div class="button-container2">
+        <!-- Custom Button -->
+        <button class="btn" type="button">
+            <strong>ABOUT</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
     </div>
 
     <div id="loading-screen">
@@ -40,18 +55,28 @@
         <img src="./assets/avatar.png" alt="Avatar" class="avatar">
     </div>
 
-    <!-- Video Element -->
-    <video id="home-video" autoplay muted loop>
-        <source src="./assets/Hologram.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <!-- Video Wrapper -->
+    <div class="video-wrapper">
+        <video id="home-video" autoplay muted loop>
+            <source src="./assets/Looping2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 </div>
 
     <!-- Content Overlay -->
 <div class="content-overlay">
-    <h1 class="text-magic" data-word="Ampalo,"><span>Ampalo,</span></h1>
-    <h1 class="text-magic" data-word="Roland G."><span>Roland G.</span></h1>
-    <p>Some introduction or content...</p>
+    <div class="masked-text-wrapper">
+        <h2 class="text-default">Ampalo,</h2>
+        <h2 class="text-underneath">Ampalo,</h2>
+    </div>
+    <div class="masked-text-wrapper">
+        <h2 class="text-default">Roland G.</h2>
+        <h2 class="text-underneath">Roland G.</h2>
+    </div>
+    <div class="typewriter">
+        <h2>I am <span id="dynamic-text"></span></h2>
+    </div>
 </div>
 
     <script src="js/script.js"></script>
