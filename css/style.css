@@ -71,9 +71,9 @@ body, html {
 }
 
 .social-icons a:hover {
-    color: red; /* Icon color changes to red on hover */
+    color: orange; /* Change text stroke to orange */
     background-color: #fff; /* Background color for emphasis */
-    box-shadow: 0 0 10px red; /* Glowing effect */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.704); /* Semi-transparent yellow color */
 }
 
 #loading-screen {
@@ -555,6 +555,63 @@ strong {
   }
 
 
+  @media only screen and (min-width: 1280px) and (max-width: 1920px) {
+    /* Adjust navbar for medium to large screens */
+    .navbar {
+        left: calc(30% - 200px); /* Center the navbar */
+        font-size: calc(1rem + 0.5vw); /* Adjust font size based on viewport width */
+    }
+
+    /* Adjust social icons for medium to large screens */
+    .social-icons {
+        right: 20px; /* Closer to the edge */
+        font-size: calc(1rem + 0.5vw); /* Adjust icon size */
+    }
+
+    /* Make avatar and video responsive */
+    .avatar-container, .video-wrapper {
+        left: 30%;
+        transform: translateX(-50%); /* Center horizontally */
+        width: calc(60% + 5vw); /* Responsive width */
+        top: 0px;
+    }
+
+    .avatar {
+        width: 100%; /* Full container width */
+    }
+
+     /* Adjust video size */
+     .video-wrapper {
+        width: 100%; /* Full width of the container */
+        height: 100%; /* Full height of the container */
+    }
+
+    #home-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Adjust as needed */
+    }
+
+    /* Adjust button size */
+    .button-container2 .btn {
+        width: calc(10rem + 2vw); /* Responsive button width */
+        height: calc(2.5rem + 0.5vw); /* Responsive button height */
+    }
+
+    /* Adjust text size */
+    .content-overlay h2{
+        font-size: calc(1.5rem + 5vw); /* Responsive font size */
+    }
+
+    /* Typewriter effect */
+    .typewriter h2 {
+        font-size: calc(0.9em + 0.5vw); /* Responsive typewriter text size */
+    }
+
+    .button-container2 {
+        top: 65%;
+    }
+}
 
 /* Responsive Styles */
 @media (max-width: 600px) {
