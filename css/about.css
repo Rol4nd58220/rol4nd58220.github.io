@@ -1,0 +1,64 @@
+/* Import the main styles for consistency */
+@import url('/css/style.css'); /* Update this path to the location of your main CSS file */
+
+/* About Page Specific Styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    background: #333; /* Set the background color */
+}
+
+/* VHS Overlay */
+.vhs-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(
+            transparent,
+            transparent 1px,
+            rgba(255, 255, 255, 0.05) 1px,
+            rgba(255, 255, 255, 0.05) 2px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.03),
+            rgba(0, 255, 0, 0.03) 33%,
+            rgba(0, 0, 255, 0.03) 66%
+        );
+    background-size: 100% 4px, 3px 100%;
+    mix-blend-mode: screen;
+    z-index: 1000;
+}
+
+#about {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#about h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-me, .skills {
+    margin-bottom: 30px;
+}
+
+.about-me ul, .skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-me li, .skills li {
+    margin-bottom: 10px;
+}
+
+.about-me li i, .skills li i {
+    margin-right: 10px;
+}
+
+/* Add any additional styles specific to the About page below */

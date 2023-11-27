@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var dynamicText = document.getElementById('dynamic-text'); // Ensure this ID is assigned to your <p> element
     var loadingSteps = [50, 75, 93, 100];
     var currentStepIndex = 0;
-    var phrases = ["Developer", "3D Artist", "Frontend Developer", "Artist"];
+    var phrases = ["Fuck you Jm, Developer", "3D Artist", "Frontend Developer", "Artist"];
     var phraseIndex = 0;
     var deleting = false;
     var textIndex = 0;
