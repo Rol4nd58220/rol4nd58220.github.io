@@ -6,6 +6,7 @@
     <title>About - Roland Ampalo</title>
     <link rel="stylesheet" href="/css/about.css"> <!-- Link to your separate CSS file for the about page -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 <body class="vhs-overlay">
 
@@ -13,7 +14,7 @@
     <nav class="navbar">
         <ul>
             <li><a href="/index.html">Home</a></li>
-            <li><a href="./about.html">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -27,36 +28,133 @@
     </div>
 
     <!-- About Section -->
-    <section id="about">
-        <h1>About Me</h1>
-        <img src="./assets/avatar.png" alt="Roland Ampalo" class="avatar"> <!-- Your Avatar Image -->
-        <p>Hello! I'm Roland Ampalo, a passionate Developer, 3D Artist, and Frontend Developer. I love creating beautiful and functional digital experiences.</p>
-        
-        <!-- Bio and Details -->
-        <div class="about-me">
-            <h2>Bio</h2>
-            <p>Here is a brief introduction about me. [Insert your bio here]</p>
+    <section id="about" class="about-container">
+        <div>
+            <!-- Left Column for About Me -->
+            <div class="left-column">
+                <h1>About Me</h1>
+                <div class="about-me">
+                    <!-- About Me content here -->
+                    <p>I&#39;m Roland Ampalo, passionate about programming and art. My province is Pangasinan. I delight in creating unique digital experiences and addressing challenges with innovative coding solutions. Always eager to learn and adapt, I explore fresh possibilities in programming, aiming to inspire and make a mark in the ever-evolving tech world.</p>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Location: Crystal Cave Bakakeng Central</li>
+                        <li><i class="fas fa-phone-alt"></i> Phone: +639294114330</li>
+                        <li><i class="fas fa-envelope"></i> Email: rga4751@students.uc-bcf.edu.ph</li>
+                        <li><i class="fas fa-globe"></i> Website: https://rol4nd58220.github.io/</li>
+                    </ul>
+                </div>
+            </div>
 
-            <ul>
-                <li><i class="fas fa-map-marker-alt"></i> Location: City, Country</li>
-                <li><i class="fas fa-phone-alt"></i> Phone: +123 456 7890</li>
-                <li><i class="fas fa-envelope"></i> Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-                <li><i class="fas fa-globe"></i> Website: <a href="http://www.yourwebsite.com">www.yourwebsite.com</a></li>
-            </ul>
-        </div>
+            <!-- Center Column for Bio Image -->
+            <div class="center-column">
+                <div class="b-game-card">
+                    <div class="b-game-card__cover">
+                        <img src="/assets/bioPic.png" alt="Bio Picture" class="rounded_border">
+                    </div>
+                </div>
+            </div>
 
-        <!-- Skills Section -->
-        <div class="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Web Development</li>
-                <li>3D Modeling</li>
-                <li>Graphic Design</li>
-                <!-- Add more skills here -->
-            </ul>
-        </div>
+            <div class="content-overlay">
+                <div class="masked-text-wrapper">
+                    <h2 class="text-default">Ampalo,</h2>
+                    <h2 class="text-underneath">Ampalo,</h2>
+                </div>
+                <div class="masked-text-wrapper">
+                    <h2 class="text-default">Roland G.</h2>
+                    <h2 class="text-underneath">Roland G.</h2>
+                </div>
+            </div>
 
+            <!-- Right Column for Skills -->
+            <div class="center">
+                <h1>My Skills</h1>
+                <div class="skill-container">
+                    <p>Web Developer</p>
+                    <p>76%</p>
+                    <div class="skill-bar">
+                        <div class="skill-level html"></div>
+                    </div>
+                </div>
+                <div class="skill-container">
+                    <p>Programmer</p>
+                    <p>70%</p>
+                    <div class="skill-bar">
+                        <div class="skill-level css"></div>
+                    </div>
+                </div>
+                <div class="skill-container">
+                    <p>3D Artist</p>
+                    <p>56%</p>
+                    <div class="skill-bar">
+                        <div class="skill-level sass"></div>
+                    </div>
+                </div>
+                <div class="skill-container">
+                    <p>Drawing</p>
+                    <p>46%</p>
+                    <div class="skill-bar">
+                        <div class="skill-level js"></div>
+                    </div>
+                </div>
+                <div class="skill-container">
+                    <p>Game Desing</p>
+                    <p>40%</p>
+                    <div class="skill-bar">
+                        <div class="skill-level sql"></div>
+                    </div>
+                </div>
     </section>
 
+    <section id="portfolio">
+        <div class="portfolio-container">
+            <h1>Portfolio</h1>
+            <div class="card-grid">
+                <!-- Portfolio items -->
+                <div class="card">
+                    <div class="card__background" style="background-image: url('/assets/elem.png');"></div>
+                    <div class="card__content">
+                        <h3 class="card__heading">Elementary Graduation</h3>
+                    </div>
+                </div>
+                <!-- Portfolio items -->
+                <div class="card">
+                    <div class="card__background" style="background-image: url('/assets/juniorHighSchool.png');"></div>
+                    <div class="card__content">
+                        <h3 class="card__heading">Junior Higschool Graduation</h3>
+                    </div>
+                </div>
+                <!-- Portfolio items -->
+                <div class="card">
+                    <div class="card__background" style="background-image: url('/assets/seniorHighSchool.png');"></div>
+                    <div class="card__content">
+                        <h3 class="card__heading">Senior Highschool Graduation</h3>
+                    </div>
+                </div>
+                <!-- Portfolio items -->
+                <div class="card">
+                    <div class="card__background" style="background-image: url('/assets/mom.png');"></div>
+                    <div class="card__content">
+                        <h3 class="card__heading">Greatest Mom</h3>
+                    </div>
+                </div>
+                <!-- Portfolio items -->
+                <div class="card">
+                    <div class="card__background" style="background-image: url('/assets/dad.png');"></div>
+                    <div class="card__content">
+                        <h3 class="card__heading">Greates Dad</h3>
+                    </div>
+                </div>
+                <!-- Portfolio items -->
+                <div class="card">
+                    <div class="card__background" style="background-image: url('/assets/jesseMartinez.png');"></div>
+                    <div class="card__content">
+                        <h3 class="card__heading">Jesse Martinez</h3>
+                    </div>
+                </div>
+                <!-- More portfolio items... -->
+            </div>
+        </div>
+    </section>
+    
 </body>
 </html>
