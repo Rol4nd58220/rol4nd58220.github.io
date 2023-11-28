@@ -38,7 +38,7 @@ section {
     max-width: 1920px;
 }
 
-#about::before, #portfolio::before {
+#about::before, #portfolio::before, #contact::before {
     content: '';
     position: absolute;
     top: 0;
@@ -591,5 +591,127 @@ h2 {
     color: #ddd;
 }
 
+#contact {
+    position: relative;
+}
 
+.contact-container {
+    padding: 20px;
+    text-align: center;
+}
 
+.contact-container h1 {
+    position: absolute;
+    text-align: center; /* Center the heading */
+    color: orange; /* Change color of the heading */
+    font-size: 2.5em; /* Increase font size */
+    top: 15%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 30px;
+    gap: 20px;
+}
+
+.chat_box {
+    width: 500px; /* Adjust width of each chatbox */
+    height: 500px; /* Adjust height as needed */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat_box .body {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #eee;
+}
+
+.chat_box .foot {
+    display: flex;
+    align-items: center;
+}
+
+.chat_box .foot .msg {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.chat_box .foot button {
+    background-color: #79c7c5;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.chat_box .foot button i {
+    color: #fff;
+}
+
+/* Chat Box Footer Styles */
+.foot {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #f0f0f0; /* Light background for the footer */
+    border-top: 1px solid #ddd; /* Separator line */
+}
+
+.foot .msg {
+    flex-grow: 1;
+    margin-right: 8px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.foot button {
+    padding: 8px 12px;
+    background-color: orange; /* Orange background for send button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.foot button:hover {
+    background-color: #e69500; /* Darker shade for hover effect */
+}
+
+.foot button i {
+    font-size: 16px;
+}
+
+/* Font Awesome Icon Adjustments */
+.avatar i {
+    font-size: 24px; /* Adjust the size of the avatar icons */
+    color: orange; /* Color of the icons */
+}
+
+/* Additional Styling for Avatar Icons */
+.avatar {
+    width: 30px; /* Set a fixed width for avatar */
+    height: 30px; /* Set a fixed height for avatar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #fff; /* White background for the avatar circle */
+    margin-right: 10px;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Light background for the header */
+    border-bottom: 1px solid #ddd; /* Separator line */
+    color: orange;
+    padding: 8px;
+}
