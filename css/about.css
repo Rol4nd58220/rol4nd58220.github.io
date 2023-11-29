@@ -23,7 +23,6 @@ body, html {
     color: white;
     background-color: black; /* Or any other color you prefer */
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 section {
