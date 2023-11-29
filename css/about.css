@@ -493,7 +493,7 @@ h2 {
 
 #portfolio h1 {
     position: relative;
-    top: -30px;
+    top: -50px;
     font-size: 4em;
 }
 
@@ -510,6 +510,8 @@ h2 {
     grid-row-gap: var(--spacing-l);
     max-width: var(--width-container);
     width: 100%;
+    position: relative;
+    top: -50px;
   }
 
   .card{
