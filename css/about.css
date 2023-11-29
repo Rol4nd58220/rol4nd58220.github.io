@@ -493,8 +493,8 @@ h2 {
 
 #portfolio h1 {
     position: relative;
-    top: 10px;
-    font-size: 5em;
+    top: -30px;
+    font-size: 4em;
 }
 
 .portfolio-container {
